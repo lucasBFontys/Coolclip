@@ -1,5 +1,5 @@
 import React from "react";
-import { Wind, ShieldCheck, BatteryCharging, ArrowRight, Star, Compass, Sparkles, Volume2, Scale } from "lucide-react";
+import { Wind, ShieldCheck, BatteryCharging, ArrowRight, Star, Sparkles, Volume2, Scale } from "lucide-react";
 
 export default function Hero() {
   const stats = [
@@ -12,35 +12,25 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#121815] text-[#F7F6F0] pt-16 pb-24 sm:pt-24 sm:pb-32 border-b border-white/10" id="hero">
       
-      {/* Oregon Outdoor Alliance Style Background HTML5 Video Stream */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="https://placehold.co/1920x1080/121815/4E876A/png?text=Outdoor+Mountain+Backpacker+Video+Poster"
-          className="w-full h-full object-cover object-center scale-105"
-        >
-          {/* Public high quality ambient outdoor mountain & trail video sources */}
-          <source
-            src="https://cdn.coverr.co/videos/coverr-hiking-in-the-mountains-5437/1080p.mp4"
-            type="video/mp4"
+      {/* YouTube Background Video Stream (_nlQtWA7QfQ) Full-Bleed Overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="relative w-full h-full">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/_nlQtWA7QfQ?autoplay=1&mute=1&loop=1&playlist=_nlQtWA7QfQ&controls=0&showinfo=0&rel=0&enablejsapi=1&playsinline=1&modestbranding=1&disablekb=1"
+            title="CoolClip Hero Background Video"
+            className="absolute top-1/2 left-1/2 w-[180vw] h-[180vh] min-w-[100%] min-h-[100%] -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none opacity-45 scale-110"
+            allow="autoplay; encrypted-media"
           />
-          <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-hiker-walking-on-top-of-a-mountain-41551-large.mp4"
-            type="video/mp4"
-          />
-        </video>
+        </div>
 
-        {/* Dark Pine Gradient Vignette Overlay for maximum contrast */}
+        {/* Dark Pine Vignette Overlay for maximum text readability & contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#121815]/90 via-[#121815]/75 to-[#121815]" />
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
         
-        {/* Simplified Above the Fold Tagline & Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#4E876A]/30 border border-[#4E876A] px-4 py-1.5 rounded-full text-xs font-mono-accent tracking-wider text-white hero-glow-badge backdrop-blur">
+        {/* Above the Fold Tagline & Badge */}
+        <div className="inline-flex items-center gap-2 bg-[#4E876A]/35 border border-[#4E876A] px-4 py-1.5 rounded-full text-xs font-mono-accent tracking-wider text-white hero-glow-badge backdrop-blur">
           <Sparkles className="w-3.5 h-3.5 text-[#5CE1E6]" />
           <span className="font-bold uppercase tracking-widest text-[#5CE1E6]">
             JOUW VERKOELING, WAAR JE OOK GAAT

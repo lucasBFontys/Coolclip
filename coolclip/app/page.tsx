@@ -17,6 +17,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import ProductShowcase from "../components/ProductShowcase";
 import HeatCheckQuiz from "../components/HeatCheckQuiz";
 import ProblemSection from "../components/ProblemSection";
 import UseCases from "../components/UseCases";
@@ -36,7 +37,7 @@ export default function Home() {
     "@type": "Product",
     name: "CoolClip Mini Airco",
     image: [
-      "https://placehold.co/1200x630/121815/FFFFFF/png?text=CoolClip+Product+In+Action"
+      "https://coolclip.nl/product-showcase.jpg"
     ],
     description:
       "CoolClip is de klembare 185g mini-airco voor backpackers die 8 uur lang ijskoele lucht levert in snikhete hostels, bussen en tenten. Jouw verkoeling, waar je ook gaat.",
@@ -97,8 +98,11 @@ export default function Home() {
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* Simplified Video Hero Section */}
+        {/* Ambient Nature Video Hero Section */}
         <Hero />
+
+        {/* Product Kit Showcase Section (Uploaded Flat-Lay Bundle Photo) */}
+        <ProductShowcase />
 
         {/* Cialdini #2: Commitment & Consistency Quiz */}
         <HeatCheckQuiz />
