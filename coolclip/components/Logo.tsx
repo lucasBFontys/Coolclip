@@ -3,32 +3,72 @@ import React from "react";
 interface LogoProps {
   className?: string;
   showText?: boolean;
+  variant?: "dark" | "light" | "sage";
 }
 
-export default function Logo({ className = "h-7", showText = true }: LogoProps) {
+export default function Logo({
+  className = "h-8",
+  showText = true,
+  variant = "light",
+}: LogoProps) {
+  // Determine color palette based on variant
+  const isDarkBg = variant === "dark";
+  const cColor = isDarkBg ? "#FFFFFF" : "#1A1A1A";
+  const snowflakeColor = isDarkBg ? "#FFFFFF" : "#6E8F7E";
+  const textColor = isDarkBg ? "#FFFFFF" : "#1A1A1A";
+
   return (
-    <div className={`inline-flex items-center gap-2.5 font-bold tracking-tight text-[#1A1A1A] select-none ${className}`}>
-      {/* SVG Icon: Stylized bold 'C' with a distinct dot next to it */}
+    <div
+      className={`inline-flex items-center gap-2.5 font-bold tracking-tight select-none ${className}`}
+    >
+      {/* SVG Icon: Bold 'C' with a 6-pointed Snowflake icon in the top-right opening */}
       <svg
-        width="34"
-        height="34"
-        viewBox="0 0 34 34"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="shrink-0 transition-transform duration-300 hover:scale-105"
-        aria-label="CoolClip logo icon"
+        aria-label="CoolClip logo icon with snowflake"
       >
-        {/* Bold outer 'C' shape */}
+        {/* Bold outer 'C' shape matching exact uploaded logo image geometry */}
         <path
-          d="M 20 6 C 12 6 6 12 6 20 C 6 28 12 34 20 34 C 23.5 34 26.5 32.8 28.8 30.5 L 24.5 26.2 C 23.3 27.4 21.8 28.1 20 28.1 C 15.5 28.1 12 24.6 12 20.1 C 12 15.6 15.5 12.1 20 12.1 C 21.8 12.1 23.3 12.8 24.5 14 L 28.8 9.7 C 26.5 7.4 23.5 6 20 6 Z"
-          fill="#1A1A1A"
+          d="M 21.5 6.5 C 13.5 6.5 7.5 12.5 7.5 20.5 C 7.5 28.5 13.5 34.5 21.5 34.5 C 25.8 34.5 29.2 32.8 31.8 29.8 L 26.5 25.2 C 25.2 26.5 23.6 27.2 21.5 27.2 C 17.8 27.2 14.8 24.2 14.8 20.5 C 14.8 16.8 17.8 13.8 21.5 13.8 C 23.6 13.8 25.2 14.5 26.5 15.8 L 31.8 11.2 C 29.2 8.2 25.8 6.5 21.5 6.5 Z"
+          fill={cColor}
         />
-        {/* Separate cooling dot / point next to the C */}
-        <circle cx="28.5" cy="19.8" r="3.2" fill="#6E8F7E" />
+
+        {/* 6-Point Snowflake Vector Icon at the top-right opening of the C */}
+        <g transform="translate(29.5, 12.5)" stroke={snowflakeColor} strokeWidth="1.8" strokeLinecap="round">
+          {/* Main 3 axis lines crossing at center (6 arms) */}
+          <line x1="0" y1="-5.5" x2="0" y2="5.5" />
+          <line x1="-4.8" y1="-2.8" x2="4.8" y2="2.8" />
+          <line x1="-4.8" y1="2.8" x2="4.8" y2="-2.8" />
+
+          {/* Vertical arm branches */}
+          <line x1="-1.5" y1="-3.5" x2="0" y2="-5" />
+          <line x1="1.5" y1="-3.5" x2="0" y2="-5" />
+          <line x1="-1.5" y1="3.5" x2="0" y2="5" />
+          <line x1="1.5" y1="3.5" x2="0" y2="5" />
+
+          {/* Diagonal top-right / bottom-left arm branches */}
+          <line x1="2.2" y1="-3.2" x2="4.2" y2="-2.2" />
+          <line x1="3.2" y1="-2.2" x2="4.2" y2="-4.2" />
+          <line x1="-2.2" y1="3.2" x2="-4.2" y2="2.2" />
+          <line x1="-3.2" y1="2.2" x2="-4.2" y2="4.2" />
+
+          {/* Diagonal top-left / bottom-right arm branches */}
+          <line x1="-2.2" y1="-3.2" x2="-4.2" y2="-2.2" />
+          <line x1="-3.2" y1="-2.2" x2="-4.2" y2="-4.2" />
+          <line x1="2.2" y1="3.2" x2="4.2" y2="2.2" />
+          <line x1="3.2" y1="2.2" x2="4.2" y2="4.2" />
+        </g>
       </svg>
 
       {showText && (
-        <span className="font-heading text-xl font-bold tracking-tight text-[#1A1A1A] flex items-baseline">
+        <span
+          className="font-heading text-xl font-bold tracking-tight flex items-baseline"
+          style={{ color: textColor }}
+        >
           Cool<span className="text-[#6E8F7E]">Clip</span>
         </span>
       )}

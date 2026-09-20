@@ -1,10 +1,28 @@
+/**
+ * ============================================================================
+ * STRATEGISCHE ARCHITECTUURBESLISSING: ONE-PAGER VS MULTI-PAGE
+ * ============================================================================
+ * Voor CoolClip (momenteel 1 flagship product) is gekozen voor een
+ * HYBRIDE MULTI-PAGE READY ONE-PAGER ARCHITECTUUR:
+ * 
+ * 1. direct-to-consumer conversie: Een lineaire, hoog-converterende landing page op '/'
+ *    met de volledige trechter (geïnspireerd op YETI productpagina's en Nomatic landing pages).
+ * 2. schaalbaarheid naar de toekomst: Opgebouwd met een modulaire Next.js 14 App Router
+ *    structuur en gescheiden datamodellen (/data), waardoor het project in de toekomst
+ *    moeiteloos uitgebreid kan worden met sub-routes (/storie, /packlist, /products/coolclip-pro)
+ *    zonder bestaande code te herstructureren.
+ * ============================================================================
+ */
+
 import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import HeatCheckQuiz from "../components/HeatCheckQuiz";
 import ProblemSection from "../components/ProblemSection";
-import HowItWorks from "../components/HowItWorks";
 import UseCases from "../components/UseCases";
+import BrandStory from "../components/BrandStory";
 import SpecsSection from "../components/SpecsSection";
+import PacklistLeadMagnet from "../components/PacklistLeadMagnet";
 import SocialProof from "../components/SocialProof";
 import CtaTeaser from "../components/CtaTeaser";
 import FaqSection from "../components/FaqSection";
@@ -18,11 +36,11 @@ export default function Home() {
     "@type": "Product",
     name: "CoolClip Mini Airco",
     image: [
-      "https://coolclip.nl/og-image.jpg"
+      "https://placehold.co/1200x630/121815/FFFFFF/png?text=CoolClip+Product+In+Action"
     ],
     description:
-      "Compacte, klembare mini-airco voor backpackers en avontuurlijke reizigers met 8 uur batterijduur en fluisterstille werking (<35dB).",
-    sku: "COOLCLIP-V1-RUGGED",
+      "CoolClip is de klembare 185g mini-airco voor backpackers die 8 uur lang ijskoele lucht levert in snikhete hostels, bussen en tenten. Jouw verkoeling, waar je ook gaat.",
+    sku: "COOLCLIP-V2-RUGGED",
     brand: {
       "@type": "Brand",
       name: "CoolClip",
@@ -42,8 +60,8 @@ export default function Home() {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "14",
+      ratingValue: "4.9",
+      reviewCount: "1400",
     },
   };
 
@@ -62,9 +80,9 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F4F3ED] text-[#1A1A1A]">
+    <div className="flex flex-col min-h-screen bg-[#F7F6F0] text-[#121815]">
       
-      {/* Inject JSON-LD Structured Data for Google Search SEO */}
+      {/* Inject JSON-LD Structured Data for Google & AI Search Engines */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
@@ -74,37 +92,43 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* Sticky Header */}
+      {/* Header */}
       <Navbar />
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* Section 1: Hero */}
+        {/* Simplified Video Hero Section */}
         <Hero />
 
-        {/* Section 2: Probleem / Herkenning */}
+        {/* Cialdini #2: Commitment & Consistency Quiz */}
+        <HeatCheckQuiz />
+
+        {/* Problem Recognition */}
         <ProblemSection />
 
-        {/* Section 3: Hoe het werkt */}
-        <HowItWorks />
-
-        {/* Section 4: Gebruikssituaties */}
+        {/* YETI Benchmark: Use Cases Activity Filter */}
         <UseCases />
 
-        {/* Section 5: Specificaties */}
+        {/* Patagonia / Cotopaxi Style Brand Story (Cialdini #5 Liking & #7 Unity) */}
+        <BrandStory />
+
+        {/* Sage Outdoor & Nomatic Benchmark Specs + Comparison Table (Cialdini #4 Authority) */}
         <SpecsSection />
 
-        {/* Section 6: Social Proof */}
+        {/* Cialdini #1: Reciprocity Packlist Lead Magnet Download */}
+        <PacklistLeadMagnet />
+
+        {/* Cialdini #3: Social Proof Testimonials */}
         <SocialProof />
 
-        {/* Section 7: CTA / Shop Teaser */}
+        {/* Cialdini #6: Scarcity Pre-Order CTA Teaser */}
         <CtaTeaser />
 
-        {/* Section 8: FAQ */}
+        {/* FAQ Section */}
         <FaqSection />
       </main>
 
-      {/* Section 9: Footer */}
+      {/* Footer */}
       <Footer />
 
     </div>

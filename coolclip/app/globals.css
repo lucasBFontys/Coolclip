@@ -1,34 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --color-sage: #6E8F7E;
-  --color-sage-dark: #577364;
-  --color-sage-light: #8BA999;
-  --color-sage-subtle: #EBF1ED;
-  --color-beige: #C8C1AE;
-  --color-beige-dark: #A9A08A;
-  --color-beige-light: #ECE8DD;
-  --color-offwhite: #F4F3ED;
-  --color-nearblack: #1A1A1A;
-  --color-nearblack-soft: #2A2A2A;
+  --color-sage: #4E876A;
+  --color-sage-dark: #37634C;
+  --color-sage-light: #63A382;
+  --color-sage-glow: #88C4A6;
+  --color-sage-subtle: #E8F3EE;
+  
+  --color-frost: #5CE1E6;
+  --color-frost-light: #A0E7E5;
+
+  --color-beige: #DFD6BE;
+  --color-beige-dark: #B8AC8F;
+  --color-beige-light: #EFEAD8;
+
+  --color-offwhite: #F7F6F0;
+  --color-[#121815]: #121815;
+  --color-nearblack-soft: #1E2622;
+  
   --font-heading: var(--font-space-grotesk), sans-serif;
   --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-space-mono), monospace;
 }
 
 :root {
-  --background: #F4F3ED;
-  --foreground: #1A1A1A;
+  --background: #F7F6F0;
+  --foreground: #121815;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #F4F3ED;
-  color: #1A1A1A;
+  background-color: #F7F6F0;
+  color: #121815;
 }
 
 body {
-  background-color: #F4F3ED;
-  color: #1A1A1A;
+  background-color: #F7F6F0;
+  color: #121815;
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
 }
@@ -38,19 +46,46 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
+.font-mono-accent {
+  font-family: var(--font-space-mono), monospace;
+}
+
+/* Glassmorphism & Vibrant Glows */
+.glass-panel-dark {
+  background: rgba(18, 24, 21, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-panel-light {
+  background: rgba(247, 246, 240, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(18, 24, 21, 0.1);
+}
+
+.sage-gradient-text {
+  background: linear-gradient(135deg, #63A382 0%, #5CE1E6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-glow-badge {
+  box-shadow: 0 0 25px rgba(78, 135, 106, 0.4);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4F3ED;
+  background: #F7F6F0;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C8C1AE;
+  background: #DFD6BE;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6E8F7E;
+  background: #4E876A;
 }
 
 /* Micro animations */

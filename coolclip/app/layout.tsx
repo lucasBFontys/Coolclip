@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -16,6 +16,13 @@ const inter = Inter({
   weight: ["400", "500", "600"],
 });
 
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "700"],
+});
+
 export const viewport: Viewport = {
   themeColor: "#6E8F7E",
   width: "device-width",
@@ -25,24 +32,24 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://coolclip.nl"),
   title: {
-    default: "CoolClip | De klembare mini-airco voor backpackers & avonturiers",
+    default: "CoolClip | Jouw verkoeling, waar je ook gaat",
     template: "%s | CoolClip",
   },
   description:
-    "Blijf koel in broeierige hostels, lange nachtbussen en benauwde tenten met CoolClip. De compacte, klembare mini-koeler met 8 uur batterijduur en fluisterstille werking (<35dB).",
+    "CoolClip is de klembare mini-airco voor backpackers en avontuurlijke reizigers. Jouw verkoeling, waar je ook gaat: 8 uur batterij, heavy-duty klem en fluisterstil (<35dB) voor hostels, bussen en tenten.",
   keywords: [
     "CoolClip",
-    "mini airco backpacken",
-    "klembare koeler",
-    "reiskoeler",
-    "draagbare ventilator hostel",
-    "nachtbus koeling",
+    "Jouw verkoeling waar je ook gaat",
+    "klembare mini airco",
+    "backpacking airco",
+    "draagbare koeler hostel",
+    "reiskoeler nachtbus",
     "patagonia style outdoor gear",
-    "backpacking gadget",
+    "yeti outdoor koeler",
   ],
   authors: [{ name: "CoolClip Outdoor Gear" }],
   creator: "CoolClip",
-  publisher: "CoolClip",
+  publisher: "CoolClip Outdoor Gear",
   formatDetection: {
     email: false,
     address: false,
@@ -52,17 +59,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "CoolClip — For Backpackers & Adventurers",
+    title: "CoolClip — Jouw verkoeling, waar je ook gaat",
     description:
-      "Directe verkoeling op je gear. 8 uur batterij, heavy-duty clip en fluisterstil (<35dB). Gebouwd voor tropische hostels en lange reizen.",
+      "De klembare mini-airco voor backpackers & avonturiers. 8 uur batterij, heavy-duty clip en fluisterstil (<35dB). Gebouwd voor tropische hostels en lange reizen.",
     url: "https://coolclip.nl",
     siteName: "CoolClip",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://placehold.co/1200x630/1A1A1A/FFFFFF/png?text=CoolClip+Product+In+Action+Backpack+Hostel",
         width: 1200,
         height: 630,
-        alt: "CoolClip mini-airco geklemd op een backpack rugzak",
+        alt: "CoolClip klembare mini-airco op rugzak en hostel stapelbed",
       },
     ],
     locale: "nl_NL",
@@ -70,10 +77,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CoolClip | Klembare mini-airco voor backpackers",
+    title: "CoolClip | Jouw verkoeling, waar je ook gaat",
     description:
-      "Directe verkoeling op je gear. 8 uur batterij & fluisterstil (<35dB). Unieke koeler voor hostels, bussen en tenten.",
-    images: ["/og-image.jpg"],
+      "Directe verkoeling op je gear. 8 uur batterij & fluisterstil (<35dB). Unieke klemkoeler voor hostels, bussen en tenten.",
+    images: ["https://placehold.co/1200x630/1A1A1A/FFFFFF/png?text=CoolClip+Product+In+Action"],
   },
   robots: {
     index: true,
@@ -89,7 +96,7 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased scroll-smooth`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-[#F4F3ED] text-[#1A1A1A] font-sans">
         {children}

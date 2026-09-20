@@ -12,24 +12,14 @@ export default function Footer() {
           
           {/* Brand Info Column */}
           <div className="md:col-span-5 space-y-4">
+            
+            {/* Logo with snowflake */}
             <div className="flex items-center gap-2 bg-[#2A2A2A] w-fit p-2 rounded-lg border border-white/10">
-              {/* White/Light Logo for dark background */}
-              <div className="inline-flex items-center gap-2.5 font-bold tracking-tight text-white select-none">
-                <svg width="28" height="28" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M 20 6 C 12 6 6 12 6 20 C 6 28 12 34 20 34 C 23.5 34 26.5 32.8 28.8 30.5 L 24.5 26.2 C 23.3 27.4 21.8 28.1 20 28.1 C 15.5 28.1 12 24.6 12 20.1 C 12 15.6 15.5 12.1 20 12.1 C 21.8 12.1 23.3 12.8 24.5 14 L 28.8 9.7 C 26.5 7.4 23.5 6 20 6 Z"
-                    fill="#FFFFFF"
-                  />
-                  <circle cx="28.5" cy="19.8" r="3.2" fill="#6E8F7E" />
-                </svg>
-                <span className="font-heading text-lg font-bold text-white">
-                  Cool<span className="text-[#6E8F7E]">Clip</span>
-                </span>
-              </div>
+              <Logo variant="dark" />
             </div>
 
-            <p className="text-xs font-mono text-[#C8C1AE] uppercase tracking-widest">
-              FOR BACKPACKERS & ADVENTURERS
+            <p className="text-xs font-mono-accent text-[#C8C1AE] uppercase tracking-widest">
+              JOUW VERKOELING, WAAR JE OOK GAAT
             </p>
 
             <p className="text-sm text-[#F4F3ED]/70 leading-relaxed max-w-sm">
@@ -37,7 +27,7 @@ export default function Footer() {
             </p>
 
             {/* Eco Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#2A2A2A] px-3 py-1.5 rounded text-xs font-mono text-[#6E8F7E] border border-white/10">
+            <div className="inline-flex items-center gap-2 bg-[#2A2A2A] px-3 py-1.5 rounded text-xs font-mono-accent text-[#6E8F7E] border border-white/10">
               <Leaf className="w-3.5 h-3.5" />
               <span>100% Recycled Polymer Casing</span>
             </div>
@@ -45,7 +35,7 @@ export default function Footer() {
 
           {/* Nav Links Column */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#C8C1AE]">
+            <h4 className="font-mono-accent text-xs font-bold uppercase tracking-wider text-[#C8C1AE]">
               NAVIGATIE
             </h4>
             <ul className="space-y-2 text-sm text-[#F4F3ED]/80">
@@ -62,6 +52,9 @@ export default function Footer() {
                 <a href="#specificaties" className="hover:text-[#6E8F7E] transition-colors">Specificaties</a>
               </li>
               <li>
+                <a href="#verhaal" className="hover:text-[#6E8F7E] transition-colors">Reisverhaal</a>
+              </li>
+              <li>
                 <a href="#faq" className="hover:text-[#6E8F7E] transition-colors">FAQ</a>
               </li>
               <li>
@@ -72,11 +65,11 @@ export default function Footer() {
 
           {/* Social Media & Community Column */}
           <div className="md:col-span-4 space-y-3">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#C8C1AE]">
-              COMMUNITY & SOCIALS
+            <h4 className="font-mono-accent text-xs font-bold uppercase tracking-wider text-[#C8C1AE]">
+              COMMUNITY & SOCIALS (#CoolClip)
             </h4>
             <p className="text-xs text-[#F4F3ED]/60">
-              Volg onze testreizen en backpacker avonturen via onze kanalen.
+              Sluit je aan bij de #CoolClipAdventurers community op reis.
             </p>
 
             {/* Social Placeholders Grid */}
@@ -85,7 +78,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#2A2A2A] hover:bg-[#6E8F7E] text-white px-3 py-1.5 rounded text-xs font-mono border border-white/10 transition-colors"
+                className="bg-[#2A2A2A] hover:bg-[#6E8F7E] text-white px-3 py-1.5 rounded text-xs font-mono-accent border border-white/10 transition-colors"
               >
                 Instagram
               </a>
@@ -93,7 +86,7 @@ export default function Footer() {
                 href="https://tiktok.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#2A2A2A] hover:bg-[#6E8F7E] text-white px-3 py-1.5 rounded text-xs font-mono border border-white/10 transition-colors"
+                className="bg-[#2A2A2A] hover:bg-[#6E8F7E] text-white px-3 py-1.5 rounded text-xs font-mono-accent border border-white/10 transition-colors"
               >
                 TikTok
               </a>
@@ -101,7 +94,7 @@ export default function Footer() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#2A2A2A] hover:bg-[#6E8F7E] text-white px-3 py-1.5 rounded text-xs font-mono border border-white/10 transition-colors"
+                className="bg-[#2A2A2A] hover:bg-[#6E8F7E] text-white px-3 py-1.5 rounded text-xs font-mono-accent border border-white/10 transition-colors"
               >
                 YouTube
               </a>
@@ -109,7 +102,7 @@ export default function Footer() {
                 href="https://strava.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#2A2A2A] hover:bg-[#6E8F7E] text-white px-3 py-1.5 rounded text-xs font-mono border border-white/10 transition-colors"
+                className="bg-[#2A2A2A] hover:bg-[#6E8F7E] text-white px-3 py-1.5 rounded text-xs font-mono-accent border border-white/10 transition-colors"
               >
                 Outdoor Club
               </a>
@@ -119,7 +112,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Copyright & Disclaimer */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-[#F4F3ED]/50 gap-4">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs font-mono-accent text-[#F4F3ED]/50 gap-4">
           <div className="flex items-center gap-2">
             <Compass className="w-4 h-4 text-[#6E8F7E]" />
             <span>© {new Date().getFullYear()} CoolClip Outdoor Gear. Alle rechten voorbehouden.</span>
